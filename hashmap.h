@@ -1,5 +1,6 @@
 #include <cstring>
 #include <iostream>
+#include <unordered_map>
 using namespace std;
 
 template<typename T>
@@ -41,7 +42,6 @@ private:
 			ans%=ms;
 			p%=ms;
 		}
-
 		return ans;
 	}
 
@@ -80,5 +80,8 @@ public:
 			cout<<endl;
 		}
 	}
+    T *search(string key){
+        int i=hashFunction(key);
 
+    }
 };
