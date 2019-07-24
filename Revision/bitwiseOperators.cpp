@@ -1,21 +1,38 @@
 #include <iostream>
 using namespace std;
+// int main()
+// {
+//     int n, setBits = 0;
+//     cin >> n;
+//     while (n)
+//     {
+//         setBits = setBits + (n & 1);
+//         n = n >> 1;
+//     }
+//     cout << setBits << endl;
+//     return 0;
+// }
 int main()
 {
-    // cout << (4 & 5) << " " << (4 | 5) << " " << (7 ^ 7);
-    // cout << (5 << 3) << endl;
-    // cout << (256 >> 5);
+    int mask = 1;
 
-    // Count The Set BITS in a given Number;
-    int n;
-    cin >> n;
-    int count = 0;
-    while (n)
+    mask = mask << 7; // will make the 31st bit 1 and rest all will be zero
+    cout << "The Value Of The Mask =" << mask << endl;
+
+    char ch;
+    cin >> ch;
+    cout << (int)ch << endl;
+    while (mask > 0)
     {
-        cout << n << endl;
-        n = n >> 1;
-        count++;
+        if ((mask & ch) == 0)
+        {
+            cout << 0;
+        }
+        else
+        {
+            cout << 1;
+        }
+        mask = mask >> 1;
     }
-    cout << count << endl;
     return 0;
 }
